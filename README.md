@@ -1,4 +1,4 @@
-# &lt;basket-element&gt; element
+# &lt;basket-element&gt;
 
 Custom element basket with counter.
 
