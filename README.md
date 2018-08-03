@@ -21,6 +21,28 @@ import "@exdeniz/basket-element"
 </basket-element>
 ```
 
+### Method
+
+Method the `<basket-fragment>` element.
+
+- `value` - Set or get counter.
+- `increment` - Increment counter.
+- `decrement` - Decrement counter.
+
+```js
+const loader = document.querySelector("basket-element")
+const counter = loader.value // get current counter
+loader.value = 5 // set counter
+loader.increment() // Increment counter. loader.value return 6
+loader.decrement() // Decrement counter. loader.value return 5
+```
+
+### Options
+
+| Attribute | Options       | Description |
+| --------- | ------------- | ----------- |
+| `value`   | value counter | default '0' |
+
 ## Browser support
 
 Browsers without native [custom element support][support] require a [polyfill][].

@@ -49,7 +49,7 @@ class BasketElement extends HTMLElement {
   }
 
   connectedCallback() {
-    this.counter = this.getAttribute('value') ? parseFloat(this.getAttribute('value')) : null
+    this.counter = this.getAttribute('value') ? parseFloat(this.getAttribute('value')) : 0
     this._setSpanAria()
     this._setAria()
     if (this.counter === null) this.querySelector('span').hidden = true
