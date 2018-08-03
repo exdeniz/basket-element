@@ -1,6 +1,6 @@
 {
   "name": "basket-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom element basket with counter.",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
