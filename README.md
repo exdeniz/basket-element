@@ -5,17 +5,17 @@ Custom element basket with counter.
 ## Installation
 
 ```
-$ npm install @exdeniz/basket-element
+$ npm install basket-element
 ```
 
 ## Usage
 
 ```js
-import "@exdeniz/basket-element"
+import "basket-element"
 ```
 
 ```html
-<basket-element value=1>
+<basket-element value="1">
   <span>0</span>
   <svg></svg>
 </basket-element>

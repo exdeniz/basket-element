@@ -1,5 +1,5 @@
 {
-  "name": "exdeniz/basket-element",
+  "name": "basket-element",
   "version": "0.0.1",
   "description": "Custom element basket with counter.",
   "main": "dist/index.umd.js",
