@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>basket-element demo</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+
+<body style="background-color: #f9f9f9">
+  <basket-element value=1>
+    <span>0</span>
+    <svg></svg>
+  </basket-element>
+  <button aria-disabled onclick="inc()">+</button>
+  <button aria-disabled onclick="dec()">-</button>
+  <script type="module" src="../index.js"></script>
+  <script>
+    function inc() {
+      document.querySelector('basket-element').increment()
+      console.log(document.querySelector('basket-element').value)
+    }
+
+    function dec() {
+      document.querySelector('basket-element').decrement()
+      console.log(document.querySelector('basket-element').value)
+    }
+  </script>
+</body>
+
+</html>
