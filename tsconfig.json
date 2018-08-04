@@ -2,8 +2,9 @@
   "compilerOptions": {
     // "module": "es2015",
     "target": "es2015",
-    "noImplicitAny": false,
-    "jsx": "preserve"
+    // "noImplicitAny": false,
+    "jsx": "preserve",
+    "strict": true
   },
   "exclude": ["node_modules", "**/node_modules/*"]
 }

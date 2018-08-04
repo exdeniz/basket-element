@@ -1,7 +1,7 @@
-"use strict"
 interface Window {
   BasketElement: any
   customElements: any
+  location: any
 }
 enum Action {
   Alert,
@@ -42,11 +42,6 @@ class BasketElement extends HTMLElement {
     }
   }
 
-  _setSpanAria(alert = false) {
-    this.querySelector("span").setAttribute("role", alert ? "alert" : "status")
-    this.querySelector("span").setAttribute("aria-label", `количествоd в корзине ${this.getAttribute("value")}`)
-  }
-
   //
   _setLabelElement() {
     this.setAttribute("aria-label", this.getAttribute("aria-label") || "basket")
@@ -83,6 +78,11 @@ class BasketElement extends HTMLElement {
   _controlSpan(action: Action) {
     const el = this.querySelector("span")
 
+    if (!el) {
+      console.log("not span")
+      return
+    }
+
     switch (action) {
       case Action.Status:
         el.hidden = false
@@ -112,17 +112,21 @@ class BasketElement extends HTMLElement {
     }
   }
   connectedCallback() {
-    this.counter = this.getAttribute("value") ? parseFloat(this.getAttribute("value")) : 0
+    const value = this.getAttribute("value") || "0"
+    this.counter = parseFloat(value)
     if (this.counter !== 0) this._controlSpan(Action.Status)
     this._setTypeElement()
     this._setLabelElement()
     this.setAttribute("tabindex", "0")
-    if (this.counter === null) this.querySelector("span").hidden = true
+    if (this.counter === null) {
+      const span = this.querySelector("span") || null
+      if (span !== null) span.hidden = true
+    }
   }
 
   disconnectedCallback() {}
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     if (name === "value") {
       if (oldValue !== newValue) {
         if (newValue !== "0") {
