@@ -15,7 +15,7 @@ import "basket-element"
 ```
 
 ```html
-<basket-element value="1">
+<basket-element value="1" href="/cart">
   <span>0</span>
   <svg></svg>
 </basket-element>
@@ -39,9 +39,13 @@ loader.decrement() // Decrement counter. loader.value return 5
 
 ### Options
 
-| Attribute | Options       | Description |
-| --------- | ------------- | ----------- |
-| `value`   | value counter | default '0' |
+| Attribute    | Options                      | Description                                            |
+| ------------ | ---------------------------- | ------------------------------------------------------ |
+| `value`      | value counter                | default '0'                                            |
+| `href`       | if element as link           | if element as link set role="link" add event to click  |
+| `role`       | role for element             | Setup custom role element                              |
+| `aria-label` | aria-label for element       | Default 'basket'                                       |
+| `message`    | template for span aria-label | example: "In basket {{#}} items", default: "In basket" |
 
 ## Browser support
 
